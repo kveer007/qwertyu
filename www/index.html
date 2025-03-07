@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intake Tracker</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Global Tab Navigation -->
+    <nav class="tabs">
+      <button id="water-tab-btn" class="tab-btn active" data-app="water">
+        Water Tracker
+      </button>
+      <button id="protein-tab-btn" class="tab-btn" data-app="protein">
+        Protein Tracker
+      </button>
+    </nav>
+
+    <!-- Protein Tracker App -->
+    <section id="protein-app" class="app-container protein-app">
+      <div class="container">
+        <button class="settings-btn" id="protein-settings-toggle">⚙️</button>
+        <button class="history-btn" id="protein-history-toggle">📅</button>
+        <h1>Protein Intake Tracker</h1>
+        <h2>Total Intake: <span id="protein-total">0</span> g</h2>
+        <h2>Remaining: <span id="protein-remaining">0</span> g</h2>
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar" id="protein-progress-bar"></div>
+        </div>
+        <div class="buttons">
+          <button data-action="protein-add" data-amount="5">+5g</button>
+          <button data-action="protein-add" data-amount="10">+10g</button>
+          <button data-action="protein-add" data-amount="20">+20g</button>
+          <input type="number" id="protein-manual" placeholder="Custom g" />
+          <button id="protein-add-manual">Add</button>
+          <button id="protein-reset-daily" class="daily-reset-btn">
+            Reset Daily Intake
+          </button>
+        </div>
+      </div>
+
+      <!-- Protein Settings Section -->
+      <div class="settings" id="protein-settings-section">
+        <h2>Settings</h2>
+        <label for="protein-goal">Set Daily Goal:</label>
+        <input type="number" id="protein-goal" placeholder="Enter goal in grams" />
+        <button id="protein-set-goal">Set Goal</button>
+        <label for="protein-reminder-time">Set Reminder (minutes):</label>
+        <input
+          type="number"
+          id="protein-reminder-time"
+          placeholder="Minutes"
+        />
+        <button id="protein-set-reminder">Set Reminder</button>
+        <button id="protein-enable-notifications">Enable Notifications</button>
+        <button id="protein-reset-data" class="reset-btn">
+          Reset All Data
+        </button>
+      </div>
+
+      <!-- Protein History Section -->
+      <div class="history-popup" id="protein-history-popup">
+        <div class="tabs-inner">
+          <button class="tab-button active" data-tab="protein-daily-history">
+            Daily History
+          </button>
+          <button class="tab-button" data-tab="protein-current-intake">
+            Today's Intake
+          </button>
+        </div>
+        <div class="tab-content" id="protein-daily-history"></div>
+        <div class="tab-content" id="protein-current-intake"></div>
+      </div>
+    </section>
+
+    <!-- Water Tracker App -->
+    <section id="water-app" class="app-container water-app active">
+      <div class="container">
+        <button class="settings-btn" id="water-settings-toggle">⚙️</button>
+        <button class="history-btn" id="water-history-toggle">📅</button>
+        <h1>Water Intake Tracker</h1>
+        <h2>Total Intake: <span id="water-total">0</span> ml</h2>
+        <h2>Remaining: <span id="water-remaining">0</span> ml</h2>
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar" id="water-progress-bar"></div>
+        </div>
+        <div class="buttons">
+          <button data-action="water-add" data-amount="100">+100ml</button>
+          <button data-action="water-add" data-amount="250">+250ml</button>
+          <button data-action="water-add" data-amount="500">+500ml</button>
+          <input type="number" id="water-manual" placeholder="Custom ml" />
+          <button id="water-add-manual">Add</button>
+          <button id="water-reset-daily" class="daily-reset-btn">
+            Reset Daily Intake
+          </button>
+        </div>
+      </div>
+
+      <!-- Water Settings Section -->
+      <div class="settings" id="water-settings-section">
+        <h2>Settings</h2>
+        <label for="water-goal">Set Daily Goal (ml):</label>
+        <input type="number" id="water-goal" placeholder="Enter goal in ml" />
+        <button id="water-set-goal">Set Goal</button>
+        <label for="water-reminder-time">Set Reminder (minutes):</label>
+        <input
+          type="number"
+          id="water-reminder-time"
+          placeholder="Minutes"
+        />
+        <button id="water-set-reminder">Set Reminder</button>
+        <button id="water-enable-notifications">Enable Notifications</button>
+        <button id="water-reset-data" class="reset-btn">Reset All Data</button>
+      </div>
+
+      <!-- Water History Section -->
+      <div class="history-popup" id="water-history-popup">
+        <div class="tabs-inner">
+          <button class="tab-button active" data-tab="water-daily-history">
+            Daily History
+          </button>
+          <button class="tab-button" data-tab="water-current-intake">
+            Today's Intake
+          </button>
+        </div>
+        <div class="tab-content" id="water-daily-history"></div>
+        <div class="tab-content" id="water-current-intake"></div>
+      </div>
+    </section>
+
+    <!-- Merged Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

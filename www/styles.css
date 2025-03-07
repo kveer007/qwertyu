@@ -1,0 +1,232 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #FF7043;
+  --background-color: #f4f4f4;
+  --light-bg: #fff;
+  --font-family: 'Roboto', sans-serif;
+  --protein-bg: #FBE9E7;
+  --protein-button: #C62828;
+  --protein-button-hover: #B71C1C;
+  --water-bg: #3d96d6;
+  --water-button: #007BFF;
+  --water-button-hover: #0056b3;
+}
+
+body {
+  font-family: var(--font-family);
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background: var(--background-color);
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tabs .tab-btn {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.tabs .tab-btn.active {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* App Container */
+.app-container {
+  display: none;
+}
+.app-container.active {
+  display: block;
+}
+
+/* Container Styles */
+.container {
+  max-width: 400px;
+  background: var(--light-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  position: relative;
+}
+
+/* Button and Input Styling */
+.settings-btn,
+.history-btn {
+  position: absolute;
+  top: 10px;
+  font-size: 24px;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.settings-btn {
+  right: 10px;
+}
+.history-btn {
+  left: 10px;
+}
+input {
+  padding: 10px;
+  margin: 5px;
+  width: 80px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button {
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  transform: scale(1.02);
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.progress-bar {
+  width: 0%;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+/* Protein Tracker (Warm/Red Theme) */
+.protein-app {
+  background-color: var(--protein-bg);
+}
+.protein-app h1 {
+  color: var(--protein-button);
+}
+.protein-app button {
+  background: var(--protein-button);
+  color: #fff;
+}
+.protein-app button:hover {
+  background: var(--protein-button-hover);
+}
+.protein-app .daily-reset-btn {
+  background: var(--secondary-color);
+  color: #fff;
+}
+.protein-app .daily-reset-btn:hover {
+  background: darkorange;
+}
+
+/* Water Tracker (Cool/Blue Theme) */
+.water-app {
+  background-color: var(--water-bg);
+}
+.water-app h1 {
+  color: var(--primary-color);
+}
+.water-app button {
+  background: var(--water-button);
+  color: #fff;
+}
+.water-app button:hover {
+  background: var(--water-button-hover);
+}
+.water-app .reset-btn {
+  background: red;
+  color: #fff;
+}
+.water-app .reset-btn:hover {
+  background: darkred;
+}
+.water-app .daily-reset-btn {
+  background: orange;
+  color: #fff;
+}
+.water-app .daily-reset-btn:hover {
+  background: darkorange;
+}
+
+/* Settings & History Popups */
+.settings,
+.history-popup {
+  max-width: 400px;
+  background: var(--light-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  display: none;
+  text-align: left;
+  transition: opacity 0.3s ease;
+}
+
+/* Inner Tabs in Popups */
+.tabs-inner {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 20px;
+}
+.tabs-inner .tab-button {
+  flex: 1;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--primary-color);
+  transition: background 0.3s ease;
+}
+.tabs-inner .tab-button:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+.tabs-inner .tab-button.active {
+  font-weight: bold;
+  border-bottom: 3px solid var(--primary-color);
+}
+.tab-content {
+  display: none;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Day Entry */
+.day-entry {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.day-entry p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container, .settings, .history-popup {
+    max-width: 90%;
+    padding: 15px;
+  }
+  input {
+    width: 70px;
+  }
+}
